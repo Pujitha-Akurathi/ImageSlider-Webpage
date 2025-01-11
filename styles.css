@@ -1,0 +1,363 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"); 
+/* Reset global styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+/* Custom CSS variables */
+:root {
+  --primary: #ec994b;
+  --white: #ffffff;
+  --bg: #f5f5f5;
+}
+
+/* Root font size */
+html {
+  font-size: 62.5%;
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+}
+@media (min-width: 1440px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+@media (min-width: 2560px) {
+  html {
+    font-size: 62.5%; /* Maintain font scaling instead of zoom */
+  }
+}
+
+@media (min-width: 3860px) {
+  html {
+    font-size: 62.5%; /* Maintain font scaling instead of zoom */
+  }
+}
+
+::-webkit-scrollbar {
+  width: 1.3rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: #797979;
+  transition: all 0.5s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #222224;
+}
+
+::-webkit-scrollbar-track {
+  background: #f9f9f9;
+}
+
+/* Body styling */
+body {
+  font-size: 1.6rem;
+  background: url("https://images.unsplash.com/photo-1704916902292-2d9eae6cd667?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YXJha3UlMjB2YWxsZXl8ZW58MHx8MHx8fDA%3D");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden; /* Ensures no overflow outside body */
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: brightness(30%);
+  background-color: rgba(255, 255, 255, 0.6); /* Light shade (white with 60% opacity) */
+  z-index: -1; /* Ensures the overlay is behind the content */
+}
+
+/* Container for layout */
+.container {
+  max-width: 115rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-heading {
+  font-size: 5rem;
+  color: plum;
+  padding: 0 0;/* Adjust the size if needed */
+  font-weight: 900;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.section-subheading {
+  font-size: 1.5rem;
+  color:white;
+  padding: 1rem 0;/* Adjust the size if needed */
+  font-style: italic;
+}
+#tranding {
+  padding: 4rem 0;
+}
+
+@media (max-width: 1440px) {
+  #tranding {
+    padding: 7rem 0;
+  }
+}
+
+/* Slider Styling */
+#tranding .tranding-slider {
+  height: 90rem; 
+  gap: 0.2rem; /* Reduced space between image containers */
+  padding: 2rem 0;
+  position: relative;
+}
+
+@media (max-width: 500px) {
+  #tranding .tranding-slider {
+    height: 70rem; /* Adjusted for smaller screens */
+  }
+}
+
+/* Slider Container */
+.tranding-slider {
+  position: relative; /* Keep the arrows in place relative to this container */
+  height: 90rem;
+  padding: 2rem 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  /* Ensure slider is touchable on mobile */
+  touch-action: pan-y; /* Allow vertical swiping */
+  -ms-touch-action: pan-y; /* For older IE/Edge versions */
+}
+
+
+
+.tranding-slide {
+  width: 200px; /* Fixed width */
+  height: 450px; /* Fixed height */
+  margin: 0; /* Ensure no additional margin */
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .tranding-slide-img img {
+    width: 250px;
+    height: 400px;
+  }
+  .swiper-wrapper {
+    gap: 0;
+  }
+  .swiper-slide {
+    width: 100% !important; /* Ensure full-width for smaller screens */
+  }
+}
+
+
+
+@media (max-width: 500px) {
+  .tranding-slide {
+    width: 100%;
+    height: auto;
+  }
+  .tranding-slide-img img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.tranding-slide-img img {
+  width: 100%; /* Ensure full width */
+  height: 100%; /* Ensure full height */
+  border-radius: 1.5rem;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: opacity 0.5s ease-in-out; 
+}
+
+/* Content inside each slide */
+.tranding-slide .tranding-slide-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.tranding-slide-content h1 {
+  color:peachpuff; /* Set your desired color here */
+  font-size: 2.5rem; /* Adjust the size if needed */
+  font-weight: 600;
+  text-align: center; /* Optional: you can change the weight */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+.tranding-slide-content p {
+  color:white; /* Set your desired color here */
+  font-size: 1.2rem; /* Adjust the size if needed */
+  font-weight: 100; /* Optional: you can change the weight */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+.tranding-slide-content .tranding-slide-content-bottom {
+  position: absolute;
+  bottom: 0rem;
+  color: var(--white);
+}
+
+/* Swiper Container */
+.swiper-container {
+  position: relative;
+  width: 90%;
+  height: 100%;
+}
+
+/* Swiper Wrapper (Flex Layout) */
+.swiper-wrapper {
+  display: flex; /* Flex layout for slides */
+  gap: 2px; /* Matches the spaceBetween value */
+}
+
+/* Swiper Shadow Styling (Invisible in this case) */
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  display:none;
+}
+
+/* Slider Navigation Controls - Position outside container */
+.tranding-slider-control {
+  position: fixed; /* Fixing the position relative to the viewport */
+  top: 50%; /* Vertically center it on the page */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateY(-50%); /* Adjust to truly center vertically */
+  pointer-events: none;
+  z-index: 1000; /* Ensure they stay above the content */
+}
+
+.slider-arrow {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  pointer-events: all;
+}
+
+.slider-prev,
+.slider-next {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20; /* Ensure they appear above the content */
+  user-select: none;
+  pointer-events: all;
+}
+
+.slider-prev {
+  left: 10px; /* Position the left arrow on the left side */
+}
+
+.slider-next {
+  right: 10px; /* Position the right arrow on the right side */
+}
+
+.slider-prev:hover,
+.slider-next:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+  transform: scale(1.1); /* Slight scaling effect on hover */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .slider-prev,
+  .slider-next {
+    font-size: 1.5rem;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+
+.tranding-slider-control .slider-arrow ion-icon {
+  font-size: 2rem; /* Adjust size for visibility */
+  color: white;
+}
+
+.tranding-slider-control .swiper-pagination {
+  position: relative;
+  width: 15rem;
+  bottom: 1rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.tranding-slider-control .swiper-pagination .swiper-pagination-bullet {
+  filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+}
+
+.tranding-slider-control .swiper-pagination .swiper-pagination-bullet-active {
+  background: var(--primary);
+}
+
+/* Thumbnail Navigation */
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem; /* Space between slider and thumbnails */
+}
+
+.thumbnail {
+  width: 100px;
+  height: 80px;
+  margin: 0 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+  border: 2px solid var(--primary); /* Highlight border on hover */
+}
+
+.thumbnail.active {
+  border: 3px solid var(--primary);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); /* Added stronger shadow for active state */
+}
+
+/* Caption Container */
+.caption-container {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1.8rem;
+  color: var(--white);
+  font-weight: 500;
+}
